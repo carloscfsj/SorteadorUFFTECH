@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/79ca7ab7c2.js" crossorigin="anonymous"></script>
+
+        <title>Sorteador</title>
+    </head>
+
+<body>
+
+    <header>
+
+        <div id = 'logo'><a href="index.js"></a><img src="img/UT_junior preta.png" alt="LOGO" width="90px"></a></div>
+
+        <div id="direitaheader">
+
+            <div id = 'sorteadornumerico'><a href="./homeSorteador.html">Sorteador Numérico </a></div>
+
+            <div id = 'sorteadornumerico'><a href="./embaralhadorNome.html">Sorteador de Nomes</a></div>
+
+            <div class="dropdown">
+
+                <div id = 'OutrosSorteadores' >
+                    <p id="dropdow-inner">Outros Sorteadores  <i class="fa fa-chevron-circle-down" aria-hidden="true" onclick="ItemResponsivo()"></i> </p>
+                </div>
+
+                <div class="dropdown-conteudo" id="dropdown-cont">
+                    <a href="http://conversor.ufftech.com/">Conversor de Medidas</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="icone"> 
+
+            <i class="fa fa-bars fa-2x" ></i>
+            
+        </div>
+        
+
+    </header>
+
+        <main>
+
+            <div id = 'logoMain'><img src="./img/Sorteador Editado.png" alt="LOGO"></div>
+            <div id = 'logoMainResponsivo'><img src="./img/Sorteador Mobile.png" alt="LOGO"></div>
+
+            <div id='caixasorteio'>
+
+                <div id = 'sorteio1'>
+
+                    <h1>Sortear:</h1>
+                    <p>
+                        <input type="number" class = 'caixainput1' value='0' id='quantidade'></input>
+                    </p>
+                    <h1>Número(os)</h1>
+
+                </div>
+
+                <div id = 'sorteio2'>
+                        <h1 class = "textocaixa2">De:</h1>
+                        <p><input type="number" class = 'caixainput2' value='0'  id='limiteInferior'></input></p>
+         
+                        <h1 class = "textocaixa2">Até:</h1>
+                        <p><input type="number" class = 'caixainput2' value='0'  id='limiteSuperior'></input></p>
+                </div>
+
+                <div id = 'caixamarcaçao'>
+                
+                    <input type="checkbox" name = 'opçao1' class = 'check'></input>
+                    <label for = 'opçao1' class = 'checkTitulo'>Ordenar</label>
+
+                    <input type="checkbox" name = 'opçao2' class = 'check'></input>
+                    <label for = 'opçao2' class = 'checkTitulo'>Com animação</label>
+
+                    <input type="checkbox" name = 'opçao3' class = 'check'></input>
+                    <label for = 'opçao3' class = 'checkTitulo'>Adicionar efeitos</label>
+
+                    <p><input type="radio" name="radio" id="sem-repeticao" placeholder="sem-repeticao" value="box" >Sem Repetição</p>
+                    <p><input type="radio" name="radio" id="com-repeticao" placeholder="com-repeticao" value="box" >Com Repetição</p>
+
+                </div>
+
+                <button  id="botaoModal">Sortear</button>
+
+            </div>
+
+            <div id="Modalid" class="modal">
+
+                <div class="modal-conteudo">
+
+                    <span class="fechar">&times;</span>
+
+                    <section id="ModalTitulo" >Resultado do Sorteio</section>
+
+                    <div id="ModalResposta"> 
+
+                        <h1 id='resultado'>Resultado</h1>
+
+                    </div>
+
+                    <div id="ModalNavegacao">
+
+                        <a href="#">Compartilhar Resultado</a>
+                        <a href="#">Realizar novo Sorteio</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </main>
+
+    <footer>
+
+        <div class = 'conteudofooter'>
+
+            <img src="img/UT_junior preta.png" alt="LOGO" width="150">
+
+        </div>
+
+        <div class = 'conteudofooter'>
+
+            <h1>Sobre Nós</h1>
+            <p>Visite Nosso Site:</p>
+            <a href="https://www.ufftech.com/">UFFtech</a>
+
+        </div>
+
+        <div class = 'conteudofooter'>
+
+            <h1>Redes Sociais</h1>
+            <a href="https://www.facebook.com/ufftech.ej"><i class="fa fa-facebook-official fa-2x " aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+            
+        </div>
+
+        <div class = 'conteudofooter'>
+
+            <h1>Contato</h1>
+            <p><a href="#"><i class="fa fa-whatsapp fa-lg" aria-hidden="true"></i><span> (24)99999-9600</span></a></p>
+            <p><a href="#"><i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i><span> ufftech.ej@gmail.com</span></a></p>
+
+        </div>
+
+        <div class = 'footerresponsivo'>
+
+            <a href="#"><i class="fa fa-facebook-official fa-2x " aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></a>
+
+        </div>
+
+    </footer>
+
+    <script src="../index.js"></script>
+    <script>
+
+    
+    // JAVASCRIPT ESTILIZAÇÃO
+    
+    var modal = document.getElementById("Modalid");      
+    var botao = document.getElementById("botaoModal");
+    var span = document.getElementsByClassName("fechar")[0];
+     
+    botao.onclick = function() {
+        sorteador();
+        modal.style.display = "block";
+    };
+   
+    
+    span.onclick = function() {
+        modal.style.display = "none";
+    };
+    
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+    
+    document.getElementById("icone").addEventListener("click", MenuResponsivo);
+    
+    function MenuResponsivo(){
+        var id = document.getElementById("direitaheader")
+        var estadocss = window.getComputedStyle(id, null).getPropertyValue("display");
+    
+        if (estadocss == 'flex') {
+            id.style.display = 'none';
+        } else {
+            id.style.display = 'flex';
+        }
+    };
+    
+    function ItemResponsivo(){
+        var classe = document.getElementById("dropdown-cont");
+        var  estadocss = window.getComputedStyle(classe).getPropertyValue("display");
+    
+        if ( estadocss == 'block') {
+            classe.style.display = 'none';
+        } else {
+            classe.style.display = 'block';
+        }
+    };</script>
+
+</body>
+</html>
+<script>
+    
+</script>

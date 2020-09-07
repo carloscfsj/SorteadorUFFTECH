@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/79ca7ab7c2.js" crossorigin="anonymous"></script>
+
+        <title>Sorteador</title>
+    </head>
+
+<body>
+
+    <header>
+
+        <div id = 'logo'><img src="img/Ut_junior preta.png" alt="LOGO" width="60"></div>
+
+        <div id="direitaheader">
+
+            <div id = 'sorteadornumerico'><a href="index.html">Sorteador Numérico </a></div>
+
+            <div id = 'sorteadornumerico'><a href="./embaralhadorNome.html">Sorteador de Nomes</a></div>
+
+            <div class="dropdown">
+
+                <div id = 'OutrosSorteadores' >
+                    <p style="margin-bottom: 0;">Outros Sorteadores  <span class="fa fa-chevron-circle-down" aria-hidden="true" onclick="ItemResponsivo()"></i> </p>
+                </div>
+
+                <div class="dropdown-conteudo" id="dropdown-cont">
+                    <a href="http://conversor.ufftech.com/">Conversor de Medidas</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="icone"> 
+
+            <i class="fa fa-bars fa-2x" ></i>
+            
+        </div>
+        
+
+    </header>
+
+        <main>
+
+            <div id = 'logoMain'><img src="./img/Sorteador Editado.png" alt="LOGO"></div>
+            <div id = 'logoMainResponsivo'><img src="./img/Sorteador Mobile.png" alt="LOGO"></div>
+
+            <div id='caixasorteio'>
+
+                <div id = 'sorteioNome'>
+                    <div class = 'conteudosorteio1'>
+                        <h1 class = "textocaixa1" style="margin-top: 10px;">Inserir na lista:</h1>
+                        <input  id="inputname" 
+                            type="text" 
+                            oninput="validity.valid||(value='')" 
+                            name="name"  id="name" pattern="[A-Za-z0-9\s]{1,}" 
+                            title="Utilize letras de A até Z." 
+                            autocomplete="off"
+                        >
+                        <button id="btn"
+                            id="btn-send"
+                            onclick="adicionarnome()"  
+                            class="btn btn1" 
+                            type="submit">Adicionar Nome
+                        </button>
+                        <button  onclick="document.getElementById('resultadoalterado').innerHTML = '';clearname();" 
+                            id="btn-clear"
+                            class="btn btn1" 
+                            type="reset">Limpar
+                        </button>
+                    </div>
+    
+                    <div id="resultado-nomes">
+                        <p></p>
+                    </div>
+                    <div>
+                        <p style="align-items: center;">
+                            <div id="overflow">
+                                <fieldset id="resultadoalterado2">
+                                    <ul id="resultadoalterado"></ul>
+                                </fieldset>                     
+                            </div>
+                        </p>
+                        <p style="align-items: center;">
+                            <button  id="botaoModal" >Embaralhar</button>
+                        </p>
+                    </div>
+                </div>
+
+            <div id="Modalid" class="modal">
+
+                <div class="modal-conteudo">
+
+                    <span class="fechar">&times;</span>
+
+                    <div id="ModalTitulo" >Resultado do Sorteio</section>
+
+                    <div id="ModalResposta"> 
+
+                        <div id="overflow">
+                            <p id="resultadoalterado2">
+                                <ul id="resultadoalterado">         
+                                </ul>
+                            </p>
+                              
+                        </div>
+
+                        <div id="resultado-nomes">
+                            <p></p>
+                        </div>
+
+                    </div>
+
+                    <div id="ModalNavegacao">
+
+                        <a href="#">Compartilhar Resultado</a>
+                        <a href="#">Realizar novo Sorteio</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </main>
+
+    <footer>
+
+        <div class = 'conteudofooter'>
+
+            <img src="img/UT_junior preta.png" alt="LOGO" width="150">
+
+        </div>
+
+        <div class = 'conteudofooter'>
+
+            <h1>Sobre Nós</h1>
+            <p>Visite Nosso Site</p>
+            <a href="https://www.ufftech.com/">UFFtech</a>
+
+        </div>
+
+        <div class = 'conteudofooter'>
+
+            <h1>Redes Sociais</h1>
+            <a href="#"><i class="fa fa-facebook-official fa-2x " aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+            
+        </div>
+
+        <div class = 'conteudofooter'>
+
+            <h1>Contato</h1>
+            <p><a href="#"><i class="fa fa-whatsapp fa-lg" aria-hidden="true"></i><span> (24)99999-9600</span></a></p>
+            <p><a href="#"><i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i><span> ufftech.ej@gmail.com</span></a></p>
+
+        </div>
+
+        <div class = 'footerresponsivo'>
+
+            <a href="#"><i class="fa fa-facebook-official fa-2x " aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></a>
+
+        </div>
+
+    </footer>
+
+    <script src="../index.js"></script>
+    <script>// JAVASCRIPT ESTILIZAÇÃO
+
+        var input = document.getElementById("inputname");
+        inputname.addEventListener("keydown", function (e) {
+            if (e.keyCode === 13) {
+                adicionarnome();
+            }
+        });
+
+
+
+        var modal = document.getElementById("Modalid");      
+        var botao = document.getElementById("botaoModal");
+        var span = document.getElementsByClassName("fechar")[0];
+      
+        botao.onclick = function() {
+            sortclick();
+            modal.style.display = "block";
+        };
+        
+        span.onclick = function() {
+            modal.style.display = "none";
+        };
+        
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+        
+        document.getElementById("icone").addEventListener("click", MenuResponsivo);
+        
+        function MenuResponsivo(){
+            var id = document.getElementById("direitaheader")
+            var estadocss = window.getComputedStyle(id, null).getPropertyValue("display");
+        
+            if (estadocss == 'flex') {
+                id.style.display = 'none';
+            } else {
+                id.style.display = 'flex';
+            }
+        };
+        
+        function ItemResponsivo(){
+            var classe = document.getElementById("dropdown-cont");
+            var  estadocss = window.getComputedStyle(classe).getPropertyValue("display");
+        
+            if ( estadocss == 'block') {
+                classe.style.display = 'none';
+            } else {
+                classe.style.display = 'block';
+            }
+
+        
+        }</script>
+
+</body>
+    
+
+</html>
